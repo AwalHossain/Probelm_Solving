@@ -1,0 +1,51 @@
+.sidebar {
+    height: 100%;
+    background-color: aqua;
+    position: absolute;
+    padding: 10px 20px;
+    margin: 0;
+    left: -100%;
+    transition: .4s ease-in-out;
+  
+}
+
+.show-side{
+    left: 0;
+}
+
+.sidebar ul{
+    list-style: none;
+    margin:0 ;
+    padding: 72px;
+}
+
+.sidebar li{
+   font-size: 1.4em;
+   margin: 12px 0;
+}
+.sidebar a {
+    color: rgb(44, 0, 148);
+    text-decoration: none;
+}
+#open-menu{
+    position: fixed;
+    right: 15px;
+    top: 22px;
+
+    font-size: 1.2rem;
+    border: 2px solid black;
+
+}
+
+#close-menu{
+    position: absolute;
+    transform: rotate(45deg);
+    background: none;
+    border: none;
+    font-size: 2rem;
+    right: 1px;
+    top: -5px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    z-index: 2;
+}
