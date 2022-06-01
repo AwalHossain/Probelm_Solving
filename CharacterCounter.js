@@ -18,7 +18,7 @@ function characterCounter (str){
         
     }
 
-    console.log(obj);
+   return obj;
 
 }
 
