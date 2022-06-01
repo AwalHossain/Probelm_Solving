@@ -6,19 +6,28 @@ Given an array of integers nums and an integer target,
 
 */
 
-function twoSum(nums: number[], target: number): any {
+function twoSum(nums: number[], target: number):any {
 
-    for(let i:number=0; i<nums.length; i++){
-        let numberToFind = target - nums[i];
+    let numsVal: any={};
 
-        for(let j=(i+1); j<nums.length; j++){
-            if(numberToFind === nums[j]){
-              return [i, j]
-                
-            }
+    for(let i=0; i<nums.length; i++){
+
+        const currentMapVal = numsVal[nums[i]]
+        // console.log(nums[i]);
+        if(currentMapVal >=0){
+            return [currentMapVal, i];
+        }else{
+            const numberToFind = target - nums[i];
+            numsVal[numberToFind] = i;
         }
+    // const  numberToFind =  (target - nums[i])
+
+    
+    
     }
+
+    
     
 };
 
-console.log(twoSum([2,7,8,9], 9));
+console.log(twoSum([2, 4, 18,7,8,9], 22));

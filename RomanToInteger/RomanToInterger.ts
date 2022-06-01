@@ -41,4 +41,5 @@ function romanToInt(s:string):number{
     return sum;
 }
 
-romanToInt("III")
+console.log(romanToInt("III"));
+
