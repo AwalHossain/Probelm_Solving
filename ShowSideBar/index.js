@@ -1,11 +1,13 @@
-const sidebar = document.querySelector(".sidebar")
-const closeMenu = document.querySelector("#close-menu")
-const openMenu = document.querySelector("#open-menu")
+const openMenu = document.querySelector('.open-menu');
 
-openMenu.addEventListener('click', toglleMenu);
-closeMenu.addEventListener('click', toglleMenu);
+const sidebar = document.querySelector('.sidebar')
+
+const closeMenu = document.querySelector('.close');
 
 
-function toglleMenu(){
-    sidebar.classList.toggle('show-side')
+openMenu.addEventListener('click', toggelMenubar);
+closeMenu.addEventListener('click', toggelMenubar);
+
+function toggelMenubar(){
+    sidebar.classList.toggle("open");
 }
