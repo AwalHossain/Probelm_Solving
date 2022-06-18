@@ -1,19 +1,22 @@
 
-function plusOne(arr){
+function plusOne(arr, arr2){
     
-    for (let i = arr.length -1; i>= 0; i--){
-        if(arr[i] < 9){
-            console.log(arr);
-            arr[i] = arr[i] + 1;
-            return arr;
-        }else{
-            arr[i] = 0;
-            console.log(arr);
+    let result = {};
+    for (let i = 0; i<arr.length; i++){
+        let currenVal= result[arr[i]];
+        console.log(result, "fi");
+            if(currenVal == 0 | currenVal > 0){
+                return [currenVal, i];
+            }else{
+                let target = arr2 - arr[i];
+                result[target] = i;
+            }
         }
 
     }
-    arr.unshift(1)
-    return arr;
-}
+ 
 
-console.log(plusOne([9,9]));
+console.log(plusOne([2,4,6,5,3,7,1], 9));
+
+
+
