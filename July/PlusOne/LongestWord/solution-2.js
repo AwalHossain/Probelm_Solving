@@ -10,4 +10,4 @@ function longestWord (sen){
 }
 
 
-console.log(longestWord("I love.. you"));
+console.log(longestWord("I love.. nomi you"));

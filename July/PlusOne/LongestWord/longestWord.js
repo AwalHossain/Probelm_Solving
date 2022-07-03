@@ -17,4 +17,4 @@ var LongestWord = (sen)=>{
 }
 
 
-console.log(LongestWord("    I Love!!...   you"    ));
+console.log(LongestWord("    I bini Love!!...  nobi you"    ));
