@@ -3,10 +3,10 @@
 
 var LongestWord = (sen)=>{
     sen = sen.trim();
+    console.log(sen,"o");
     sen = sen.replace(/[^a-zA-Z0-9 ]/g, '')
 
     let longest ="";
-    console.log(sen,"o");
 
     var arr = sen.split(" ").forEach(word =>{
         console.log(word.length);
@@ -17,4 +17,4 @@ var LongestWord = (sen)=>{
 }
 
 
-console.log(LongestWord("    I bini Love!!...  nobi you"    ));
+console.log(LongestWord("    I bini Love!!...     nobi you"    ));
