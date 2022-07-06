@@ -3,7 +3,7 @@
 function firstRecurringCharacter(input){
     
    let obj = {};
-  for( r in input){
+  for( let r=0; r<input.length; r++){
     
      let currenVal = obj[input[r]];
             if(currenVal>=0){
@@ -16,4 +16,4 @@ console.log(obj,"obj");
 }
 
 
-console.log(firstRecurringCharacter([1,5,5,1,3,4,6]));
+console.log(firstRecurringCharacter([1,0,5,11,3,51,0]));
