@@ -8,7 +8,19 @@
 
 var findDuplicate = function(nums) {
 
-    
+    let obj = {};
+
+    for(let i=0; i<nums.length; i++ ){
+        let checkDuplicate = obj[nums[i]];
+console.log(checkDuplicate,"l");
+        if(checkDuplicate >=0){
+            return nums[i];
+        }else{
+            obj[nums[i]] = i;
+        }
+        console.log(obj,"obj");
+    }
+    return undefined;
 };
 
 
