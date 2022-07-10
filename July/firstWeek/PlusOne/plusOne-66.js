@@ -18,4 +18,4 @@
         return arr;
 };   
 
-console.log(plusOne([9]));
+console.log(plusOne([4,2,1]));
