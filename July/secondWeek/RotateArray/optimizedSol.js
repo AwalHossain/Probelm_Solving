@@ -5,32 +5,39 @@ var rotate = function(nums, k) {
 
     k = k % nums.length;
 
-    console.log(k, "ki");
+    let left = 0, right = nums.length-1;
 
-    let l = 0, r = nums.length - 1;
+    while(left < right){
 
-    while(l<r){
-        [nums[l], nums[r]] = [nums[r], nums[l]]
+        [nums[left], nums[right]]  = [nums[right], nums[left]]
 
-        l++;
-        r--;
+        left ++;
+        right --;
     }
 
-    l = 0, r = k -1
+    left = 0; right = k -1 ;
+    while(left < right){
+        [nums[left], nums[right]] = [nums[right], nums[left]]
 
-    while(l<r){
-        [nums[l], nums[r]] = [nums[r], nums[l]]
-        l = l+1,  r = r-1;
-
+        left ++;
+        right --;
     }
 
-    l = k, r = nums.length - 1;
-    while (l<r){
-        [nums[l], nums[r]] = [nums[r], nums[l]]
-        l = l+1, r=r-1;
+    left = k; right = nums.length - 1;
+
+    console.log(nums,"up","lo");
+    while(left < right){
+    [nums[left], nums[right]] = [nums[right], nums[left]]
+
+    left++;
+    right = right - 1;
+
+    console.log(nums[left]);
     }
 
-    console.log(nums);
+    console.log(nums,"lo");
+    
+
 };
 
 
