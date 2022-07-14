@@ -13,8 +13,6 @@
          right--;
      }
 
-     console.log(y.join(""),'y');
-
     return b == y.join("")
 
 
