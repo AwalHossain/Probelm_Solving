@@ -1,27 +1,26 @@
-var sortArray = function(arr1, arr2){
-
-
-    let i=0, j=0;
-    let p1=arr1[i], p2=arr2[j];
-
-    let empty =[];
-
+var sortArray = function(nums1,  nums2,){
+    let newArr = [];
+ 
+    let i = 0, j=0;
+   let p1=nums1[i], p2=nums2[j];
+    console.log(p1,p2,"o");
     while(p1 || p2){
-        
-        if( p2 === undefined || p2 > p1){
-            empty.push(p1);
+        console.log(p1,p2,"p");
+        if( p2 == undefined || p1<p2){
+            newArr.push(p1)
             i++;
-           p1 = arr1[i];
+            p1 = nums1[i];
         }else{
-            empty.push(p2);
-            j++;            
-            p2 = arr2[j]
-            console.log(arr1[i],"i");
+            newArr.push(p2);
+            j++;
+            p2= nums2[j];
         }
-   }
-   return empty;
+    }
+
+    console.log(newArr);
+
 }
 
 
 
-console.log(sortArray([1,2,3], [2,4,6]));
+console.log(sortArray([1,2,3],[2,5,6]));
