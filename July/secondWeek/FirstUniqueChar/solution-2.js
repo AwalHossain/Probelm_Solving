@@ -12,9 +12,6 @@ var firstUniqChar = function(s) {
             firstUniqChar.pop(s[i])
         }
         
-        // if (firstUniqChar[s[i]] == 0){
-        //     return s[i];
-        // }
     }
 
 
