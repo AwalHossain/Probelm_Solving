@@ -17,7 +17,6 @@ var rotate = function(nums, k) {
 
     return [...arr2, ...arr1]
 
-    console.log(arr1, arr2);
 };
 
 

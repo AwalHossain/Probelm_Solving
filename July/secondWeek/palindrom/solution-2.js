@@ -1,8 +1,8 @@
  isPalindrome = function(x) { 
 
+   // conveting number to string
     let b = x.toString();
     let y = b.split("")
-    
 
      let left = 0, right = y.length-1;
 
