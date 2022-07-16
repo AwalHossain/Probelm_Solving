@@ -29,3 +29,8 @@ var lengthOfLongestSubstring = function(s) {
 
 
 console.log(lengthOfLongestSubstring( "pwwkew"));
+
+
+// if you wanna know more about this problem then check this out
+
+// https://duncan-mcardle.medium.com/leetcode-problem-2-longest-substring-without-repeating-characters-javascript-993890bf8eac
