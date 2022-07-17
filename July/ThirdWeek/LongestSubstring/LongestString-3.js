@@ -15,12 +15,18 @@ var lengthOfLongestSubstring = function(s) {
         let c = s.charAt(i);
 
         while(set.has(c)){
+            // checking before deleting value
+            console.log(set,"check");
             set.delete(s.charAt(j));
             j++;
+            // chekcing after deleting value
+             console.log(set,"last",j);
         }
         set.add(c);
         long = Math.max(long, i-j+1);
+        console.log(set,"very", i, j );
         i++;
+
     }
   
     return long;
