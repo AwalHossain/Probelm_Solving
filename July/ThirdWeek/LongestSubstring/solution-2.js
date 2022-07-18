@@ -12,6 +12,7 @@ var lengthOfLongestSubstring = function (s) {
         let currentCharacter = s[i];
         let currentCharacterPositionInMap = characterMap.get(currentCharacter);
 
+        console.log(currentCharacterPositionInMap,"j");
         // Check if current character exists in the Map, and was found within the current window
         if (currentCharacterPositionInMap >= startOfWindow) {
             // Move the current window to start after the first instance of the current character
@@ -31,4 +32,4 @@ var lengthOfLongestSubstring = function (s) {
     return longestStringLength;
 };
 
-console.log(lengthOfLongestSubstring("abcda"));
+console.log(lengthOfLongestSubstring("abcdab"));
