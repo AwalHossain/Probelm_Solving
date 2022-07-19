@@ -19,7 +19,7 @@ var lengthOfLongestSubstring = function (s) {
             startOfWindow = currentCharacterPositionInMap + 1;
         }
 
-        // Add the current character to the Map with its position in the string
+       
         characterMap.set(currentCharacter, i);
 
         // Store the current string length if bigger than the existing record
