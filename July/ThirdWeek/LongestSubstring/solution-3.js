@@ -2,6 +2,8 @@
 
 var lengthOfLongestSubstring = function (s) { 
 
+
+    // there are some bug in this solution, need to solve 
     let obj = {};
     let j = 0, max = 0;
 
