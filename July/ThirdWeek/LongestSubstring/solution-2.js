@@ -32,4 +32,4 @@ var lengthOfLongestSubstring = function (s) {
     return longestStringLength;
 };
 
-console.log(lengthOfLongestSubstring("abcdab"));
+console.log(lengthOfLongestSubstring("abba"));

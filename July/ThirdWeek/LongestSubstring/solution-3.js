@@ -10,9 +10,10 @@ var lengthOfLongestSubstring = function (s) {
     for(let i=0; i<s.length; i++){
 
         let check = obj[s[i]];
-
-        if(check >=0){
-            j++;
+        console.log(check,"j",i);
+        if(check >=j){
+            j = check +1;
+            console.log(j,"Inside");
         }
 
         obj[s[i]] = i;
@@ -29,4 +30,4 @@ var lengthOfLongestSubstring = function (s) {
 
 
 
-console.log(lengthOfLongestSubstring("vdfv"));
+console.log(lengthOfLongestSubstring("abba"));
