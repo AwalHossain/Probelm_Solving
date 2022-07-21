@@ -18,38 +18,44 @@
 
 
 class LinkedList {
-    constructor(value){
-        this.head = {
-            value:  value,
-            next : null
-        }
-        this.tail = this.head;
-        this.length = 1;
+   constructor(value){
+
+    this.head={
+    value: value,
+        next: null
     }
+    this.tail = this.head;
+    this.length = 1;
+   }
 
-    append(value){
+//    prepend method to add item at end the of the linked-list
+
+   prepend(value){
         const newNode = {
-            value : value,
-            next: null
-        };
-
+    value : value,
+    next : null
+        }
         this.tail.next = newNode;
-
         this.tail = newNode;
 
         this.length++;
-        // return this;
-    }
 
-    prepend(value){
-        const newPre = {
-            value: value,
-            next: null
-        }
-        newPre.next = this.head;
-        this.head = newPre;
-       
+        return this;
+
+   }
+
+//    append method is going to add item at very begining of the linked-list
+
+   append(value){
+
+    const newNode = {
+        value: value,
+        next : null
     }
+    newNode.next = this.head;
+    this.head = newNode;
+   }
+
 }
 
 
@@ -59,8 +65,8 @@ const myFirstLinkedList = new LinkedList(10);
 
 // myFirstLinkedList.append(5)
 myFirstLinkedList.append(15)
-// myFirstLinkedList.prepend(22)
-myFirstLinkedList.prepend(32)
+myFirstLinkedList.prepend(22)
+// myFirstLinkedList.prepend(32)
 // myFirstLinkedList.prepend(12)
 
 console.log(myFirstLinkedList);
