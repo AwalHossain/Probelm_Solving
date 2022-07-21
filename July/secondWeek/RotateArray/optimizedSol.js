@@ -16,16 +16,17 @@ var rotate = function(nums, k) {
     }
 
     left = 0; right = k -1 ;
+    console.log(k,"first");
     while(left < right){
         [nums[left], nums[right]] = [nums[right], nums[left]]
 
         left ++;
         right --;
     }
+    console.log(nums,"up","lo",k);
 
     left = k; right = nums.length - 1;
 
-    console.log(nums,"up","lo");
     while(left < right){
     [nums[left], nums[right]] = [nums[right], nums[left]]
 
