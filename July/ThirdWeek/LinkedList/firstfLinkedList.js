@@ -15,6 +15,14 @@
 //     }
 // }
 
+// new class
+
+class Node {
+    constructor(value){
+        this.value = value;
+        this.next = null;
+    }
+}
 
 
 class LinkedList {
@@ -31,10 +39,7 @@ class LinkedList {
     //    prepend method to add item at end the of the linked-list
 
     prepend(value) {
-        const newNode = {
-            value: value,
-            next: null
-        }
+        const newNode = new Node(value);
         this.tail.next = newNode;
         this.tail = newNode;
 
@@ -48,10 +53,7 @@ class LinkedList {
 
     append(value) {
 
-        const newNode = {
-            value: value,
-            next: null
-        }
+        const newNode = new Node(value)
         newNode.next = this.head;
         this.head = newNode;
     }
