@@ -18,7 +18,7 @@
 // new class
 
 class Node {
-    constructor(value){
+    constructor(value) {
         this.value = value;
         this.next = null;
     }
@@ -40,7 +40,6 @@ class LinkedList {
 
     prepend(value) {
         const newNode = new Node(value);
-        
         newNode.next = this.head;
         this.head = newNode;
         this.length++;
@@ -51,9 +50,8 @@ class LinkedList {
     //    append method is going to add item at very begining of the linked-list
 
     append(value) {
-        console.log(value,'oval');
         const newNode = new Node(value)
-        
+
         this.tail.next = newNode;
         this.tail = newNode;
         this.length++;
@@ -61,52 +59,66 @@ class LinkedList {
         return this;
     }
 
-    printList(){
-            let arr = [];
+    printList() {
+        let arr = [];
         let currentNode = this.head;
-            console.log(arr,'oo');
-            while(currentNode !== null){
-                
-                arr.push(currentNode.value);
-               currentNode =  currentNode.next;
-            }
+        while (currentNode !== null) {
 
-            return arr;
+            arr.push(currentNode.value);
+            currentNode = currentNode.next;
+        }
+
+        return arr;
     }
 
-    insert(index,value){
-        
-     if(index >= this.length) {
-      console.log('yes',index)
-      return this.prepend(value);
+    // inserting vlaue inside linked-list
+
+    insert(index, value) {
+
+        if (index >= this.length) {
+            console.log('yes', index)
+            return this.prepend(value);
+        }
+
+        const newNode = {
+            value: value,
+            next: null
+        }
+        const leader = this.traverseToIndex(index - 1);
+        const holdingPointer = leader.next;
+        leader.next = newNode;
+        newNode.next = holdingPointer;
+
+        this.length++;
+        return this.printList();
     }
 
-  const newNode = {
-      value: value,
-      next: null
-    }
-    const leader = this.traverseToIndex(index-1);
-    const holdingPointer = leader.next;
-    leader.next = newNode;
-    newNode.next = holdingPointer;
-
-    this.length++;
-    return this.printList();
-}
-
-      traverseToIndex(index) {
+    traverseToIndex(index) {
         let coutner = 0;
 
         let currentNode = this.head;
 
-        while(coutner !== index){
-            
+        while (coutner !== index) {
+
             currentNode = currentNode.next;
 
-            coutner++
+            coutner++;
         }
-
+        console.log(currentNode, "node");
         return currentNode;
+    }
+
+
+    // Removing element from linked list
+
+    remove(index){
+        const leader = this.traverseToIndex(index-1);
+
+        const unwanted = leader.next;
+        leader.next = unwanted.next;
+
+        this.length--;
+        return this.printList();
     }
 
 }
@@ -116,13 +128,11 @@ class LinkedList {
 const myFirstLinkedList = new LinkedList(10);
 
 
-// myFirstLinkedList.append(5)
 myFirstLinkedList.append(15)
 myFirstLinkedList.prepend(22);
-// console.log(myFirstLinkedList.insert(2, 32));
-myFirstLinkedList.insert(2,12)
 
-// myFirstLinkedList.prepend(32)
-// myFirstLinkedList.prepend(12)
+myFirstLinkedList.insert(2, 12);
+myFirstLinkedList.remove(1);
+
 
 console.log(myFirstLinkedList.printList());
