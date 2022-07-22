@@ -5,14 +5,12 @@ function twoSum (nums, target){
 
     for(let i=0; i<nums.length; i++){
 
-        let currentVal = obj[nums[i]];
-        console.log(obj,"cru");
+        let currentVal = obj[target-nums[i]];
+        // console.log(obj[target-nums[i]],"cru");
         if(currentVal >=0){
             return [i, obj[nums[i]] ]
         }else{
-            let findVal = target - nums[i];
-            console.log(findVal, "vai");
-            obj[findVal] = i
+            obj[nums[i]] = i;
         }
 
        
