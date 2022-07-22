@@ -5,20 +5,23 @@ var lengthOfLongestSubstring = function (s) {
 
     // there are some bug in this solution, need to solve 
     let obj = {};
-    let j = 0, max = 0;
+    let i=0, j = 1, max = 0;
 
-    for(let i=0; i<s.length; i++){
+    while(i<s.length){
 
         let check = obj[s[i]];
-        console.log(check,"j",i);
-        if(check >=j){
-            j = check +1;
-            console.log(j,"Inside");
-        }
+        delete obj[s[j]];
+        console.log(obj,"sj",i);
+        // while(check >=0){
+
+           
+        //    j++;
+        // }
 
         obj[s[i]] = i;
 
         max = Math.max(max, i-j+1);
+        i++;
         console.log(obj,"od", max);
     }
 
