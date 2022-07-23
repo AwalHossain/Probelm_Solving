@@ -48,6 +48,10 @@ class Stacks {
         if(!this.top){
             return null;
         }
+
+        if(this.top === this.bottom){  // this.length === 0
+            this.bottom = null;
+        }
         
         const holdingPointer = this.top.next;
         
@@ -64,9 +68,10 @@ const myFirstStacks = new Stacks();
 myFirstStacks.push("udemy");
 myFirstStacks.push("google")
 myFirstStacks.push("facebook")
-myFirstStacks.push("linkedin")
+// myFirstStacks.push("linkedin")
 myFirstStacks.pop();
 myFirstStacks.peek();
+myFirstStacks.pop();
 myFirstStacks.pop();
 
 console.log(myFirstStacks);
