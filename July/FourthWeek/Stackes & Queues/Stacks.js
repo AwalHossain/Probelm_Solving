@@ -50,20 +50,22 @@ class Stacks {
         
         const holdingPointer = this.top.next;
         
-        const newNode = new Node(holdingPointer)
-        
-        this.top = newNode;
+        this.top = holdingPointer;
 
+        this.length--;
 
     }
+
 }
 
 const myFirstStacks = new Stacks();
 
+myFirstStacks.push("udemy");
+myFirstStacks.push("google")
+myFirstStacks.push("facebook")
+myFirstStacks.push("linkedin")
+myFirstStacks.pop();
 myFirstStacks.peek();
-myFirstStacks.push(10);
-myFirstStacks.push(20)
-myFirstStacks.push(30)
 myFirstStacks.pop();
 
 console.log(myFirstStacks);
