@@ -45,8 +45,9 @@ class Stacks {
 
     pop(){
 
-        
-        const first = this.top;
+        if(!this.top){
+            return null;
+        }
         
         const holdingPointer = this.top.next;
         
