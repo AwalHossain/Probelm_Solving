@@ -13,11 +13,12 @@
          right--;
      }
 
-    return b == y.join("")
+    // return b == y.join("")
+    console.log(y.join(""));
 
 
  }
 
 
 
- console.log(isPalindrome(121));
+ console.log(isPalindrome(-123));
