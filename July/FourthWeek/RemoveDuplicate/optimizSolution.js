@@ -39,4 +39,4 @@ return nums;
 }
 
 
-console.log(removeDuplicates([-3,-1,0,0,0,3,3]));
+console.log(removeDuplicates([1,1,1,1]));
