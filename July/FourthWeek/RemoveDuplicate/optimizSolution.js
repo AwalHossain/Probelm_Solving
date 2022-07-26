@@ -6,16 +6,37 @@ let i=1;
 for(let j=0; j<nums.length; j++){
     if(nums[j] === nums[j+1]){
         
-        nums.splice(j,1);
-        j--;
+        nums[j] = "_"
     }
     console.log(j,"j");
 }
 
-// nums = nums.slice(0, i)
+
+let left = 0; 
+
+for(let right = 0; right<nums.length; right++){
+
+    if(nums[right] !== "_"){
+        [nums[left], nums[right]] = [nums[right], nums[left]];
+        left++;
+    }
+if(nums[right]=== "_"){
+        
+        console.log(nums.splice(right,1),"Ilo");
+        right--;
+    }
+    
+}
+
+
+// nums =  nums.split("_")
+
+
+
+
 return nums;
 
 }
 
 
-console.log(removeDuplicates([0,0,1,1,1,2,2,3,3,4]));
+console.log(removeDuplicates([-3,-1,0,0,0,3,3]));
