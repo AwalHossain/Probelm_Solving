@@ -6,15 +6,18 @@ class Graph {
     };
   }
   addVertex(node) {
-    this.adjacentList[node] = []
+    // creating empty array for each node
+    this.adjacentList[node] = [];
     this.numberOfNodes++;
   }
+
+  // Adding edge with connected node
   addEdge(node1, node2) {
-    // console.log(this.addVertex)
-    //undirected Graph 
+
+    // push edge number inside array
     this.adjacentList[node1].push(node2);
-    this.adjacentList[node2].push(node1);
-    // this.adjacentList = {addVertex:{node1,node2}}
+    this.adjacentList[node2].push(node1)
+
   }
   showConnections() {
     const allNodes = Object.keys(this.adjacentList);
@@ -48,7 +51,7 @@ myGraph.addEdge('0', '2');
 myGraph.addEdge('6', '5');
 
 
-console.log(myGraph.showConnections())
+console.log(myGraph)
 //Answer:
 // 0-->1 2 
 // 1-->3 2 0 
