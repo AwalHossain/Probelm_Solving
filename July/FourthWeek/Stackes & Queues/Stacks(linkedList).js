@@ -1,77 +1,70 @@
+/*
+* Building Stacks on top linked-list
+*
+*/
 
-
-
-class Node {
+class Node{
     constructor(value){
-this.value = value
-    this.next = null
+        this.value = value,
+        this.next = null
     }
-    
 }
 
 
 class Stacks {
     constructor(){
-
-       this.top = null,
-       this.bottom = null 
-
-       this.length = 0
-
+        this.top = null,
+        this.bottom = null,
+        this.length = 0;
     }
 
+    // peek method keep track of last item on top of stack
     peek(){
-
-        return this.top;
+    return this.top;
     }
+
+    // push method keep added the item on the top of the stacsk
     push(value){
         const newNode = new Node(value);
-        if(this.length === 0){
-
+        if(!this.top){
             this.top = newNode;
-            this.bottom = newNode;
+            this.bottom = newNode
+
+            
         }else{
 
             const holdingPointer = this.top;
-
             this.top = newNode;
-
             this.top.next = holdingPointer;
+            
         }
-
         this.length++;
         return this;
     }
 
+    // Pop method removes the item from the top of the list
+    
     pop(){
-
+        // if no item available 
         if(!this.top){
             return null;
         }
-
-        if(this.top === this.bottom){  // this.length === 0
-            this.bottom = null;
+// if only one item left
+        if(this.top === this.bottom){
+            return this.bottom = null;
         }
-        
-        const holdingPointer = this.top.next;
-        
-        this.top = holdingPointer;
-
-        this.length--;
-
+// removing top item by referencing next item to the top item
+        this.top= this.top.next;
     }
-
 }
 
-const myFirstStacks = new Stacks();
 
-myFirstStacks.push("udemy");
-myFirstStacks.push("google")
-myFirstStacks.push("facebook")
-// myFirstStacks.push("linkedin")
-myFirstStacks.pop();
-myFirstStacks.peek();
-myFirstStacks.pop();
-myFirstStacks.pop();
 
-console.log(myFirstStacks);
+const myStacks = new Stacks();
+
+myStacks.push(22);
+// myStacks.push(20);
+// myStacks.push(14);
+myStacks.pop();
+
+console.log(myStacks);
