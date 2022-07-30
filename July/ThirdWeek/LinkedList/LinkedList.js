@@ -49,19 +49,49 @@ class LinkedList{
         return arr;
     }
 
-    insert(index, value){
-        if(index >= this.length){
+    // insert method: to add item inside the linked-list
+  insert(index, value) {
 
-            this.append(value);
-            this.length++;
+        if (index >= this.length) {
+            console.log('yes', index)
+            return this.prepend(value);
         }
+
+        const newNode = {
+            value: value,
+            next: null
+        }
+        const leader = this.traverseToIndex(index - 1);
+        const holdingPointer = leader.next;
+        leader.next = newNode;
+        newNode.next = holdingPointer;
+
+        this.length++;
+        return this.printList();
     }
+
+    traverseToIndex(index) {
+        let coutner = 0;
+
+        let currentNode = this.head;
+
+        while (coutner !== index) {
+
+            currentNode = currentNode.next;
+
+            coutner++;
+        }
+        console.log(currentNode, "node");
+        return currentNode;
+    }
+
 }
 
 
 const myFirstLinkedList = new LinkedList(10);
 
 myFirstLinkedList.append(12)
+myFirstLinkedList.append(24)
 myFirstLinkedList.prepend(13)
 myFirstLinkedList.insert(10,88)
 
