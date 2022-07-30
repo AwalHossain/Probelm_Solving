@@ -8,7 +8,7 @@ class LinkedList{
         }
 
         this.tail = this.head;
-        this.length++;
+        this.length =1;
     }
 
       append(value){
@@ -52,9 +52,11 @@ class LinkedList{
     // insert method: to add item inside the linked-list
   insert(index, value) {
 
+    console.log(index,"i", this.length);
         if (index >= this.length) {
             console.log('yes', index)
-            return this.prepend(value);
+            this.length++;
+            return this.append(value);
         }
 
         const newNode = {
@@ -93,7 +95,7 @@ const myFirstLinkedList = new LinkedList(10);
 myFirstLinkedList.append(12)
 myFirstLinkedList.append(24)
 myFirstLinkedList.prepend(13)
-myFirstLinkedList.insert(10,88)
+myFirstLinkedList.insert(4,88)
 
 
 
