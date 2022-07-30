@@ -87,6 +87,17 @@ class LinkedList{
         return currentNode;
     }
 
+    // remove method: to remove item 
+    remove(index){
+        let leader = this.traverseToIndex(index -1);
+        let unwanted = leader.next;
+        leader.next = unwanted.next;
+
+        this.length--;
+
+        return this.printList();
+    }
+
 }
 
 
@@ -96,6 +107,7 @@ myFirstLinkedList.append(12)
 myFirstLinkedList.append(24)
 myFirstLinkedList.prepend(13)
 myFirstLinkedList.insert(4,88)
+myFirstLinkedList.remove(2)
 
 
 
