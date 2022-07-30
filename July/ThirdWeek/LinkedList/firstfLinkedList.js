@@ -36,7 +36,7 @@ class LinkedList {
         this.length = 1;
     }
 
-    //    prepend method to add item at end the of the linked-list
+    //    prepend method add item very first of the linked-list
 
     prepend(value) {
         const newNode = new Node(value);
@@ -47,7 +47,7 @@ class LinkedList {
 
     }
 
-    //    append method is going to add item at very begining of the linked-list
+    //    append method is going to add item at the very last of the linked-list
 
     append(value) {
         const newNode = new Node(value)

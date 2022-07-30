@@ -1,70 +1,47 @@
+/**
+ * building Linked-list
+ */
 
 
+// Node: for instantiating linked list
+
+class Node {
+   constructor(value){
+        this.value = value,
+        this.next = null
+
+        this.length= 0;
+    }
+}
 class LinkedList{
-    constructor(value){
+   
+     constructor(value){
         this.head = {
-            value:value,
-            next: null
-        }
-
-        this.tail = this.head;
-        this.length++;
-    }
-
-      append(value){
-            const newNode = {
-                value: value,
-                next: null
-            };
-            
-            this.tail.next = newNode;
-            this.tail = newNode;
-
-            this.length++;
-        }
-
-
-    // add item at the begining
-    prepend(value){
-        const newNode = {
-            value: value,
+            value : value,
             next : null
-        };
-
-        newNode.next = this.head
-        this.head = newNode;
-        this.length++;
-        return this;
-    }
-
-    printList(){
-        const arr = [];
-        let currentNode = this.head;
-        console.log(currentNode,"curr");
-        while(currentNode !== null){
-            arr.push(currentNode.value);
-            currentNode = currentNode.next
         }
+         this.tail = this.head;
 
-        return arr;
+         this.length = 1;
     }
 
-    insert(index, value){
-        if(index >= this.length){
+    // append method: to add item at end of the list
 
-            this.append(value);
-            this.length++;
-        }
+    append(value){
+        const newNode = new Node(value);
+
+        this.tail.next = newNode;
+        this.tail = newNode;
     }
+
+
+    // prepend method: to add item at the very begining of the list
 }
 
 
-const myFirstLinkedList = new LinkedList(10);
 
-myFirstLinkedList.append(12)
-myFirstLinkedList.prepend(13)
-myFirstLinkedList.insert(10,88)
+const myLinkedList = new LinkedList(23);
+myLinkedList.append(34);
+myLinkedList.append(44)
 
-
-
-console.log(myFirstLinkedList.printList());
+console.log(myLinkedList);
