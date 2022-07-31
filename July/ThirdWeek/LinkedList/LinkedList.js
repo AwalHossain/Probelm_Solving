@@ -98,6 +98,26 @@ class LinkedList{
         return this.printList();
     }
 
+    // Reverse the whole linked-list
+    reverse(){
+        let first = this.head;
+        this.tail = first;
+        let second = first.next;
+
+        // keep looping to go through all item
+        while(second){
+            let temp = second.next;
+            second.next = first;
+
+            first = second; 
+            second = temp;
+
+        }
+
+        this.head.next = null
+        this.head = first;
+    }
+
 }
 
 
@@ -107,7 +127,8 @@ myFirstLinkedList.append(12)
 myFirstLinkedList.append(24)
 myFirstLinkedList.prepend(13)
 myFirstLinkedList.insert(4,88)
-myFirstLinkedList.remove(2)
+// myFirstLinkedList.remove(2)
+myFirstLinkedList.reverse();
 
 
 
