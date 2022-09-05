@@ -8,13 +8,14 @@ var removeDuplicates = function(nums) {
 
         if(set.has(val)){
             set.delete(i)
+
         }
 
         set.add(val);
 
     }
 
-    return nums = [...set];
+    return set;
 
 }
 
