@@ -1,6 +1,11 @@
 select employee_id,
 case when mod(employee_id,2) <> 0 and name not like 'M%' then salary
 else salary*0 End as bonus
+
+
+case when mod(employee_id,2) <> 0 and name not like 'm%' then salary else 
+salary*0 end
+
 from employees
 order by employee_id;
 
