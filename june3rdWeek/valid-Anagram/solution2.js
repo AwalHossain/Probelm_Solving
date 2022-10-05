@@ -40,4 +40,4 @@
     
     };
     
-    console.log(isAnagram("cat", "car"));
+    console.log(isAnagram("anagram", "nagrama"));
