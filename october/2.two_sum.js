@@ -5,9 +5,9 @@
  * @return {number []}
  */
 
-var twoSum = function(nums, target, map= new Map()) {
+var twoSum = function (nums, target, map = new Map()) {
 
-    for(let i=0; i<nums.length; i++){
+    for (let i = 0; i < nums.length; i++) {
 
         let compliment = target - nums[i];
 
@@ -15,13 +15,13 @@ var twoSum = function(nums, target, map= new Map()) {
 
         const isTarget = map.has(compliment);
 
-        if(isTarget){
+        if (isTarget) {
             return [i, subIndex];
         }
 
-        map.set(nums[i],i);
+        map.set(nums[i], i);
     }
 
 }
 
-console.log(twoSum([2,7,11,15],9));
+console.log(twoSum([2, 7, 11, 15], 9));
