@@ -49,4 +49,4 @@ var isAnagram = function (s, t) {
 };
 
 
-console.log(isAnagram("ana","kala"));
+console.log(isAnagram("ana", "kala"));
