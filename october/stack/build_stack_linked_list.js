@@ -24,5 +24,29 @@ class Stack{
     }
 
 
-    // push()
+    push(value){
+        const newNode = new Node(value)
+        if(this.length === 0){
+            this.top = newNode;
+            this.bottom = newNode;
+        }else{
+
+            const holdingPointer = this.top;
+            this.top = newNode;
+            this.top.next = holdingPointer
+        }
+
+
+        this.length++;
+        return this;
+    }
+
 }
+
+
+const myStack = new Stack();
+myStack.push("udemy");
+myStack.push("google");
+
+
+console.log(myStack);
