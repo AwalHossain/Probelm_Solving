@@ -1,15 +1,18 @@
 class Node {
-    constructor(value){
+    constructor(value) {
         this.value = value;
         this.next = null;
     }
 }
 
 
+/**
 
+    * @returns (number)
+    */
 
-class Stack{
-    constructor(){
+class Stack {
+    constructor() {
         this.top = null;
         this.bottom = null;
         this.length = 0;
@@ -17,19 +20,19 @@ class Stack{
 
     /**
      * peek only return the top most value of stack
-     * @returns (number)
      */
-    peek(){
+    peek() {
         return this.top;
     }
 
 
-    push(value){
+    // push mehtod used to push value to the top most of the list
+    push(value) {
         const newNode = new Node(value)
-        if(this.length === 0){
+        if (this.length === 0) {
             this.top = newNode;
             this.bottom = newNode;
-        }else{
+        } else {
 
             const holdingPointer = this.top;
             this.top = newNode;
@@ -41,12 +44,32 @@ class Stack{
         return this;
     }
 
+
+    // remove the top most item from the stacks
+    pop() {
+        if (this.length === 0) {
+            return null;
+        }
+
+        if( this.top === this.bottom){
+            this.bottom = null;
+        }
+
+        this.top = this.top.next;
+
+        this.length--;
+        return this;
+    }
+
 }
 
 
 const myStack = new Stack();
 myStack.push("udemy");
 myStack.push("google");
-
+myStack.push("Vimeo");
+myStack.pop();
+myStack.pop();
+myStack.pop();
 
 console.log(myStack);
