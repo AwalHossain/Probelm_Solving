@@ -12,14 +12,14 @@ var isValid = function(s) {
 
         const isSquareBracket = bracket === "[";
         if(isSquareBracket) stack.push("]");
-
+        console.log("checking up", bracket);
         const isOpenBracket = isParenthesis || isCurlyBrace || isSquareBracket;
         if (isOpenBracket) continue;
-        
-        console.log("checking");
+
+
         const isEmpty = !stack.length;
         const isWrongPair = stack.pop() !== bracket;
-
+    
         const isInvalid = isEmpty || isWrongPair;
             console.log(isEmpty, isWrongPair);
         if(isInvalid) return false
