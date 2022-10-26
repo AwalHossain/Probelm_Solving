@@ -18,4 +18,4 @@ let check = set[nums[i]];
 };
 
 
-console.log(removeDuplicates([1,1,2]));
+console.log(removeDuplicates([1,1,1,2]));

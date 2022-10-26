@@ -29,9 +29,6 @@ if(nums[right]=== "_"){
 }
 
 
-// nums =  nums.split("_")
-
-
 
 
 return nums;
