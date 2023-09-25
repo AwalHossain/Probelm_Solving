@@ -44,6 +44,13 @@ function reverseString(arr) {
 }
 
 
+function reverseString(arr) {
+    return arr.split("").reduce((acc, char) => char + acc, "");
+    console.log(reverse)
+}
+
+
+
 /*
 Step 2: Now we'll reverse all strings in an array. Write a function that takes in
 an array of strings and returns a new array with all strings reversed.
