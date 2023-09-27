@@ -55,19 +55,37 @@ function removeDupesFromArray(arr) {
     return uniqueArr;
 }
 
-console.log(removeDupesFromArray(["🌈 rainbow", "🦄 unicorn", "🍭 lollipops", "🦄 unicorn", "🍭 lollipops"]), 'ermov d');
+// console.log(removeDupesFromArray(["🌈 rainbow", "🦄 unicorn", "🍭 lollipops", "🦄 unicorn", "🍭 lollipops"]), 'ermov d');
+
+// function removeDupesFromArray(arr) {
+//     const itemCount = {};
+//     const uniqueArr = arr.reduce((acc, item) => {
+//         console.log(item, 'check', acc)
+//         if (!itemCount[item]) {
+//             itemCount[item] = 1;
+//             acc.push(item);
+//         }
+//         return acc;
+//     }, []);
+//     return uniqueArr;
+// }
+
 
 function removeDupesFromArray(arr) {
-    const itemCount = {};
-    const uniqueArr = arr.reduce((acc, item) => {
-        if (!itemCount[item]) {
-            itemCount[item] = 1;
-            acc.push(item);
+
+    let newItem = {};
+
+    const uniqueArr = arr.filter((item) => {
+        if (!newItem[item]) {
+            newItem[item] = 1;
+            return true;
         }
-        return acc;
-    }, []);
+
+        return false;
+    })
     return uniqueArr;
 }
+
 
 console.log(removeDupesFromArray(["🌈 rainbow", "🦄 unicorn", "🍭 lollipops", "🦄 unicorn", "🍭 lollipops"]));
 
