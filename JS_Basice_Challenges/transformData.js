@@ -1,4 +1,4 @@
-import userData from "./data.js";
+const userData = require("./data.js");
 
 /* Totally Private Data Farm 
 
@@ -23,26 +23,40 @@ array should look like this when you're done:
 
 Read about toDateString() for info on formatting a readable date. 
 
-*/
+// */
+// function transformData(data) {
+//     // i have bunc of array of object and i have to use them and convert those data to particular fomat
+//     // first let initialize two variables
+//     let fullName = "";
+//     let birthday = "";
+
+//     // then loop through the array of objects 
+//     let newData = [];
+//     for (let i = 0; i < data.length; i++) {
+
+//         fullName = data[i].name.title + " " + data[i].name.first + " " + data[i].name.last;
+//         birthday = new Date(data[i].dob.date).toDateString();
+//         let newObj = {
+//             fullName,
+//             birthday
+//         }
+//         newData.push(newObj)
+//     }
+//     return newData;
+// }
+
+
+
 function transformData(data) {
-    // i have bunc of array of object and i have to use them and convert those data to particular fomat
-    // first let initialize two variables
-    let fullName = "";
-    let birthday = "";
+    console.log(data, 'check')
 
-    // then loop through the array of objects 
-    let newData = [];
-    for (let i = 0; i < data.length; i++) {
+    return data.map(({ name, dob }) => {
 
-        fullName = data[i].name.title + " " + data[i].name.first + " " + data[i].name.last;
-        birthday = new Date(data[i].dob.date).toDateString();
-        let newObj = {
-            fullName,
-            birthday
+        return {
+            fullName: name.title + " " + name.first + " " + name.last,
+            birthday: new Date(dob.date).toDateString()
         }
-        newData.push(newObj)
-    }
-    return newData;
+    })
 }
 
 console.log(transformData(userData));
