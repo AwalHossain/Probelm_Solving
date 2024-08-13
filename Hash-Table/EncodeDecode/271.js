@@ -1,35 +1,30 @@
 function encode(strs) {
   let res = "";
   for (let i in strs) {
-    res += strs[i].length + "/" + strs[i];
+    res += strs[i].length + "#" + strs[i];
   }
-
+  // console.log(res,"here you go")
   return res;
 }
 
+/**
+ * @param {string} str
+ * @returns {string[]}
+ */
 function decode(str) {
-  let res = [],
-    i = 0;
-
-  while (i < str.length) {
+  let arr = [];
+  for (let i = 0; i < str.length; i++) {
     let j = i;
-    // find the "/" position
-    while (str[j] !== "/") {
+    while (str[j] !== "#") {
       j++;
     }
-    console.log(j, "j value");
-    // get the length of the string
     let length = parseInt(str.substring(i, j));
-    console.log(length, "length of word value");
-    // find the actual string
-    let string = str.substring(j + 1, j + 1 + length);
-    console.log(string, "getting the actual value");
-    res.push(string);
-
-    // move the pointer
-    i = j + 1 + length;
+    console.log(j + 1, "check word", j + 1 + length);
+    let word = str.substring(j + 1, j + 1 + length);
+    arr.push(word);
+    i = j + length;
   }
-  return res;
+  return arr;
 }
 
 const input = ["neet", "code", "love", "you"];
