@@ -18,3 +18,8 @@ var maxArea = function (arr) {
 };
 
 console.log(maxArea([1, 8, 6, 2, 5, 4, 8, 3, 7]));
+
+// Time Complexity: O(n)
+
+// Space Complexity: O(1)
+ 
